@@ -1,0 +1,87 @@
+/* Guided Discovery Worksheet:
+Building the Pokemon Game */
+Grading Rubric:
+
+25% for Part One Working
+25% for Part Two Working
+25% for Part Three Working
+25% for Handing in your work properly and on time via GITHUB
+
+
+    /* 	student Name:Varun Grover
+    	student ID: 201800653
+       	date: 28/11/2019
+       	name of work:  Project all parts in it
+       	Language: PHP
+    */
+
+References: 
+https://www.tutorialrepublic.com/php-tutorial/php-classes-and-objects.php 
+http://www.psypokes.com/lab/attacks.php   
+
+/* Program Design:
+1. Construct a POKEMON CLASS
+2. Make 5 Pokemon Objects
+3. Put them into an ARRAY: The array elements are your POKEBALLs
+4. Use Random numbers to pull out 2 Pokemon
+5. Battles are done with Methods and Random Number Generators for Attack Strengths
+6. Use https://paiza.io/ to smith your Code.
+  */
+Part ONE:
+<?php
+
+class Pokemon
+{
+    // Declare  properties
+    public $PokemonName;
+    public $PokemonType;
+    
+    // Method to Attack
+    public function doPokemonAttack(){
+        return (rand(1,100));
+    }
+}
+$PokemonNames = array('Bulbasor','Ivysaur','venusaur','Charmelon','cvsbhdkbdsk','bcjgabj','bdcja','hdskhqa','bskjbkj','ghifa','bdskj','bsci','bsciks','vbsch','nhsohnik','bkjbs','bfkqfehbi',',vjad','bjsqb','vjbsj');
+$PokemonTypes = array('hksah','hdvkhwk','bkcbk','bsk','bcja','bcakb');
+$Pokeballs = array();
+for($counter=1; $counter<=20; $counter++){
+    $Pikachu = new Pokemon;
+$Pikachu->PokemonName=array_pop($PokemonNames);
+$Pikachu->PokemonTypes=$PokemonTypes[rand(0,sizeof($PokemonTypes)-1)];
+
+    
+    $Pokeballs[] = $Pikachu;
+}
+// var_dump($Pokeballs);
+
+// Part One: #todo: Write code to perform 10 Battles
+// for each battle, randomly pull 2 Pokemon out of the Pokeball
+// let them each do their Attack
+// Strongest Attack Wins!
+// Output the contestants and the Winners!!!
+// POKEMON: I CHOOSE YOU!
+
+// Part Two: #todo: Give your Pokemon Names and Types: Create an array of Names
+// use rand to select a Name for each Pokemon
+// make sure to remove that name from the array so it is not issued Twice!!!  
+
+// Part Three: #todo: Create a POKEDEX to store the results of BATTLES  
+for ($battlesCount = 1;$battlesCount <=10; $battlesCount++)
+{
+echo "BATTLE: ".$battlesCount;
+$pokemon1 = array_pop($Pokeballs);
+$pokemon2 = array_pop($Pokeballs);
+$pokemon1_attackStrength =$pokemon1->doPokemonAttack();
+
+$pokemon2_attackStrength =$pokemon2->doPokemonAttack();
+echo"Pokemon 1 attack Strength: ".$Pokemon1_attackStrength."\r\n";
+
+echo"Pokemon 2 attack Strength: ".$Pokemon2_attackStrength."\r\n";
+
+}
+
+echo "fini";
+?>
+
+
+
